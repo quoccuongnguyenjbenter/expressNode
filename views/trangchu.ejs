@@ -10,12 +10,21 @@
     <script>
         var socket=io("http://localhost:3000");
 
+        socket.on("Server-send-data",function(data){
+            $('#noidung').append(data+", ");
+        });
+
         $(document).ready(function(){
-            alert("xin chao cac ban");
+            // alert("xin chao cac ban");
+            $('#mrA').click(function(){
+                socket.emit("Client-send-data","Xin chào Nguyễn Quốc Cường!!!");
+            });
         });
     </script>
 </head>
 <body>
-    
+    <!-- <h1>Nguyễn Quốc Cường xin chào các bạn</h1> -->
+    <div id="mrA">Click vao day</div>
+    <h2 id="noidung"></h2>
 </body>
 </html>

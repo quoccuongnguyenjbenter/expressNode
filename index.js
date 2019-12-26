@@ -14,6 +14,13 @@ io.on("connection",function(socket){
     socket.on("disconnect",function(){
         console.log(socket.id+" ngắt kết nối!!");
     });
+
+    socket.on("Client-send-data",function(data){
+        console.log(socket.id+" vừa gởi: "+data);
+        // io.sockets.emit("Server-send-data",data+"8888");
+        // socket.emit("Server-send-data",data+"8888");
+        socket.broadcast.emit("Server-send-data",data+"8888");
+    });
 });
 app.get("/",function(req,res){
     res.render("trangchu");

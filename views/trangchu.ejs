@@ -13,18 +13,52 @@
         socket.on("Server-send-data",function(data){
             $('#noidung').append(data+", ");
         });
+        // socket.on("SERVER-SEND-DATA",function(data){
+        //     $("body").attr("bgcolor",data);
+        // });
 
         $(document).ready(function(){
-            // alert("xin chao cac ban");
+            alert("xin chao cac ban");
             $('#mrA').click(function(){
                 socket.emit("Client-send-data","Xin chào Nguyễn Quốc Cường!!!");
             });
+                // $("#do").click(function(){
+                //     socket.emit("CLIENT-SEND-DATA","red");
+                // });
+
+                // $("#xanh").click(function(){
+                //     socket.emit("CLIENT-SEND-DATA","blue");
+                // });
+
+                // $("#vang").click(function(){
+                //     socket.emit("CLIENT-SEND-DATA","yellow");
+                // });
         });
     </script>
+    <!-- <style>
+        #do, #xanh, #vang{
+            width: 300px;
+            height: 200px;
+        }
+        #do{
+            background-color: red;
+        }
+        #xanh{
+            background-color: blue;
+        }
+        #vang{
+            background-color: yellow;
+        }
+    
+    </style> -->
 </head>
+<!-- <body bgcolor="pink"> -->
 <body>
     <!-- <h1>Nguyễn Quốc Cường xin chào các bạn</h1> -->
     <div id="mrA">Click vao day</div>
     <h2 id="noidung"></h2>
+    <!-- <div id="do"></div>
+    <div id="xanh"></div>
+    <div id="vang"></div> -->
 </body>
 </html>

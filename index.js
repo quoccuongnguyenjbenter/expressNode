@@ -25,7 +25,7 @@ io.on("connection",function(socket){
     //     console.log(data);
     //     io.sockets.emit("SERVER-SEND-DATA",data);
     // });
-    
+
 });
 app.get("/",function(req,res){
     res.render("trangchu");
